@@ -1,0 +1,27 @@
+---
+# tasks file for AAROC.fgapi
+- name: Ensure system prerequisites
+  package:
+    name: "{{ item }}"
+  with_items: "{{ system_prerequisites[ansible_os_family]}}"
+
+- name: Ensure fgAPIServer present
+  git:
+    repo: "{{ api_server_repo }}"
+    dest: "/root/fgAPIServer"
+    force: yes
+
+- name: ensure pip requirements
+  pip:
+    requirements: /root/fgAPIServer/requirements.txt
+    virtualenv: /root/venv-apiserver
+  with_items: "{{ pip_packages }}"
+
+- name: fgapiserverconf | Configure fgapiserver.conf file
+  template:
+    src: fgapiserver.conf.j2
+    dest: "/root/fgAPIServer/fgapiserver.conf"
+    backup: yes
+    owner: "{{ fg_user }}"
+    group: "{{ fg_user }}"
+    mode: 0644
