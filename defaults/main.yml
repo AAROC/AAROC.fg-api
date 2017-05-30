@@ -6,7 +6,7 @@ system_prerequisites:
     - libmysqlclient-dev
     - python-mysql.connector
     - build-essential
-    - libssl-dev
+    - libssl-dev=1.0.2k-1~bpo8+1
     - libffi-dev
     - python-dev
     - libapache2-mod-wsgi

@@ -3,6 +3,7 @@
 - name: Ensure system prerequisites
   package:
     name: "{{ item }}"
+    update_cache: true
   with_items: "{{ system_prerequisites[ansible_os_family]}}"
 
 - name: Ensure fgAPIServer present
@@ -17,11 +18,19 @@
     virtualenv: /root/venv-apiserver
   with_items: "{{ pip_packages }}"
 
-- name: fgapiserverconf | Configure fgapiserver.conf file
+- name: Template apiserver.conf file
   template:
     src: fgapiserver.conf.j2
     dest: "/root/fgAPIServer/fgapiserver.conf"
     backup: yes
     owner: "{{ fg_user }}"
     group: "{{ fg_user }}"
+    mode: 0644
+
+- name:  APIServer wsgi configuration
+  template:
+    src: templates/fgapiserver_wsgi.conf.j2
+    dest: "{{ apache_conf_path }}/sites-available/{{ apache_vhosts_filename }}"
+    owner: root
+    group: root
     mode: 0644
