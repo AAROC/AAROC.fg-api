@@ -18,14 +18,20 @@
     virtualenv: /root/venv-apiserver
   with_items: "{{ pip_packages }}"
 
+
+- name: Ensure sites-available
+  file:
+    path: /etc/apache2/sites-available
+    state: directory
+
+    
 - name: Template apiserver.conf file
   template:
     src: fgapiserver.conf.j2
     dest: "/root/fgAPIServer/fgapiserver.conf"
     backup: yes
-    owner: "{{ fg_user }}"
-    group: "{{ fg_user }}"
     mode: 0644
+
 
 - name:  APIServer wsgi configuration
   template:

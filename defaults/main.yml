@@ -1,4 +1,12 @@
 ---
+fg_user: gw_user
+fg_db_schemaver: 0.0.10
+fg_db_host: fg_db
+fg_db_port: 3360
+fg_db_user: db_user
+fg_db_name: rad_db
+apache_conf_path: /etc/apache2/
+apache_vhosts_filename: fgapi
 # defaults file for AAROC.fgapi
 system_prerequisites:
   Debian:
@@ -10,7 +18,6 @@ system_prerequisites:
     - libffi-dev
     - python-dev
     - libapache2-mod-wsgi
-    - screen
     - git
     - python-virtualenv
   RedHat:
@@ -22,7 +29,6 @@ system_prerequisites:
     - python-devel
     - openssl-devel
     - mod_wsgi
-    - screen
     - git
     - python-virtualenv
 pip_packages:
