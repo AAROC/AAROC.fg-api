@@ -47,7 +47,7 @@ api_server_branch: master
 # apache - Uses apache + mod_wsgi
 # nginx  - nginx + uwsgi (not yet implemented)
 fg_wsgieng: apache
-
+fg_user: futuregateway
 # fgAPIServer PTV:
 # none - Does not setup any PTV service
 # test - Setup the test PTV service (fgapiserver_ptv.py)
@@ -71,6 +71,7 @@ fgjson_indent: 4
 fgapisrv_key:
 fgapisrv_crt:
 fgapisrv_logcfg: fgapiserver_log.conf
+fg_db_schemaver: 0.1.0
 fgapisrv_dbver: "{{ fg_db_schemaver }}"
 fgapisrv_secret: 0123456789ABCDEF
 fgapisrv_notoken: False
