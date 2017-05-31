@@ -1,2 +1,3 @@
 ---
 # vars file for AAROC.fgapi
+fg_db_password: db_password
