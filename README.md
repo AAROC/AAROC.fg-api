@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/aaroc/fg_api/status?token=29400784-71e1-4eb0-8493-0775c34b2464 "Docker Repository on Quay")](https://quay.io/repository/aaroc/fg_api)
+
 # Role Name
 
 Adds a <SERVICE_NAME> service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
@@ -45,5 +47,3 @@ BSD
 ## Author Information
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
-
-
