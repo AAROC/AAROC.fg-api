@@ -1,6 +1,6 @@
-[![Docker Repository on Quay](https://quay.io/repository/aaroc/fg_api/status?token=29400784-71e1-4eb0-8493-0775c34b2464 "Docker Repository on Quay")](https://quay.io/repository/aaroc/fg_api)
+[![Docker Repository on Quay](https://quay.io/repository/aaroc/fg_api/status?token=29400784-71e1-4eb0-8493-0775c34b2464 "Docker Repository on Quay")](https://quay.io/repository/aaroc/fg_api) [![Build Status](https://travis-ci.org/AAROC/AAROC.fg-api.svg?branch=master)](https://travis-ci.org/AAROC/AAROC.fg-api)
 
-# Role Name
+# FutureGateway API (Containerised)
 
 Adds a [FutureGateway API](https://github.com/FutureGateway/fgAPIServer) service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
 to install the service:
