@@ -2,7 +2,7 @@
 
 # Role Name
 
-Adds a <SERVICE_NAME> service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
+Adds a [FutureGateway API](https://github.com/FutureGateway/fgAPIServer) service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
 to install the service:
 
 ```
@@ -10,7 +10,7 @@ to install the service:
 $ cd myproject
 
 # Install the service
-$ ansible-container install <USERNAME.ROLE_NAME>
+$ ansible-container install AAROC.fg-api
 ```
 
 ## Requirements
@@ -28,22 +28,50 @@ $ ansible-container install <USERNAME.ROLE_NAME>
     $ ansible-contiainer init
     ```
 
-- Continue listing any prerequisites here...
-
 
 ## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set
-via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+  * `apache_conf_path`: Path to the Apache virtual host configuration files
+  * `apache_vhosts_filename`: Specific filename  of the Apache virtual host of the API server
+  * `system_prerequisites`: OS-dependent list of prerequisite packages
+  * `pip_packages`: Extra pip packages necessary for the API
+  * `api_server_repo`, `api_server_branch`: Git repository of the API server application; Branch to clone in the repository
+  * `fg_user`: The user which the WSGI interface runs as.
+  * `apache_mods_enabled`: Apache modules enabled
+  * Variables used in the flask configuration
+    * `fgapiver`: Undocumented
+    * `fgapiserver_name`: Name of the application
+    * `fgapisrv_host`: Host on which the application is running (defaults to localhost)
+    * `fgapisrv_port`: Port on which the flask API listens
+    * `fgapisrv_debug`: Boolean expressing whether the Flask application runs in debug mode or not.
+    * `fgapisrv_iosandbox`: Writeable directory in which the input and output sandboxes are put.
+    * `fgapisrv_geappid`: Undocumented
+    * `fgjson_indent`: Undocumented
+    * `fgapisrv_key`: Undocumented
+    * `fgapisrv_crt`: Undocumented
+    * `fgapisrv_logcfg`: Undocumented
+    * `fg_db_schemaver`: Unducumented
+    * `fgapisrv_dbver`: Undocumented
+    * `fgapisrv_secret`: Undocumented
+    * `fgapisrv_notoken`: (Boolean) Undocumented
+    * `fgapisrv_notokenusr`: Undocumented
+    * `fgapisrv_lnkptvflag`: (Boolean) Undocumented
+    *  `fgapisrv_ptvendpoint`: Undocumented
+    * `fgapisrv_ptvuser`: Undocumented
+    * `fgapisrv_ptvpass`: Undocumented
+    * `fgapisrv_ptvdefusr`: Undocumented
+    * `fgapisrv_ptvdefgrp`: Undocumented
+    * `fgapisrv_ptvmapfile`: Undocumented
 
 ## Dependencies
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 ## License
 
-BSD
+Apache-2.0
 
 ## Author Information
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Bruce Becker (C.S.I.R. Meraka Institute)
+Riccardo Bruno (Universita' di Catania)
