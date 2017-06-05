@@ -21,6 +21,6 @@ install:
   - sudo apt-get update -qq
   - sudo apt-get install -y ansible
 script:
-  - ansible-playbook -i test/inventory test/test.yml --syntax-check
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
