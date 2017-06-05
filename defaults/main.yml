@@ -1,6 +1,6 @@
 ---
-fg_user: gw_user
-fg_db_schemaver: 0.0.10
+# fg_user: gw_user
+# fg_db_schemaver: 0.0.10
 fg_db_host: fg_db
 fg_db_port: 3360
 fg_db_user: db_user
@@ -52,7 +52,7 @@ api_server_branch: master
 # fgAPIServer WSGI engines:
 # apache - Uses apache + mod_wsgi
 # nginx  - nginx + uwsgi (not yet implemented)
-fg_wsgieng: apache
+# fg_wsgieng: apache
 fg_user: futuregateway
 # fgAPIServer PTV:
 # none - Does not setup any PTV service
